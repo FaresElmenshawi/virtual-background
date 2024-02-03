@@ -29,7 +29,7 @@ Before running this application, ensure you have the following installed:
 2. Navigate into the cloned directory.
 
     ```bash
-    cd <cloned-directory>
+    cd virtual-background
     ```
 
 3. Install the required Python dependencies.
