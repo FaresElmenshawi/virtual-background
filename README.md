@@ -1,59 +1,74 @@
-# Virtual Background with YOLO Segmentation
+# Virtual Background Application using YOLO and OpenCV
 
-This project applies a virtual background to a video stream or images using YOLO segmentation. It segments the foreground object in the frame and replaces the background with a virtual one.
+This Python application utilizes the YOLO (You Only Look Once) model and OpenCV to segment objects in real-time video streams and apply virtual backgrounds. The script processes video input, segments objects using a pre-trained YOLO model, and seamlessly integrates a virtual background of choice behind the segmented object.
 
-## Requirements
+## Features
 
-- Python 3.x
-- OpenCV (`opencv-python`)
+- Real-time object segmentation using YOLO
+- Dynamic virtual background application
+- Support for video input from files or camera devices
+- Easy-to-use command-line interface
+
+## Prerequisites
+
+Before running this application, ensure you have the following installed:
+
+- Python 3.6 or higher
+- OpenCV-Python
 - NumPy
-- Ultralytics YOLO
+- The ultralytics YOLO library
 
-You can install the required packages via pip:
+## Setup
 
-```bash
-pip install opencv-python numpy ultralytics
-```
+1. Clone this repository to your local machine.
+
+    ```bash
+    git clone <repository-url>
+    ```
+
+2. Navigate into the cloned directory.
+
+    ```bash
+    cd <cloned-directory>
+    ```
+
+3. Install the required Python dependencies.
+
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Usage
 
-### Running the Script
-
-You can run the script with the following command:
+To run the application, use the following command:
 
 ```bash
-python main.py --mode <mode> --path <path_to_video_or_image_directory>
+python <script-name>.py --source <source>
 ```
 
-- `<mode>`: Mode of operation. Options are `video`, `images`, or `realtime` (default: `realtime`).
-- `<path_to_video_or_image_directory>`: Path to the video file or directory containing images.
+`<script-name>.py`: Name of the main Python script.
 
-### Modes of Operation
+`<source>`: (Optional) Index of the video capture device (e.g., `0` for the default webcam) or the path to a video file. Defaults to `0` if not specified.
 
-1. **Video Mode (`video`)**:
-    - Process a video file.
-    - Specify the path to the video file using the `--path` argument.
-    - Example: `python main.py --mode video --path path/to/video.mp4`
+## Command Line Arguments
 
-2. **Images Mode (`images`)**:
-    - Process multiple images from a directory.
-    - Specify the path to the directory containing images using the `--path` argument.
-    - Example: `python main.py --mode images --path path/to/image_directory`
+- `--source`: Specifies the video source. It can be the device index of the camera (e.g., `0`) or the path to a video file.
 
-3. **Real-time Mode (`realtime`)**:
-    - Process video stream from the default camera in real-time.
-    - No need to specify the path.
+## How It Works
 
-### Keyboard Controls
+The application performs the following steps:
 
-- Press `q` to quit the application.
-- Press `n` (in real-time mode) to switch to the next background image.
+1. Captures video from the specified source.
+2. Uses the YOLO model to segment objects in each frame.
+3. Applies a virtual background behind the segmented objects.
+4. Displays the processed video stream in real-time.
 
-## Customization
-
-You can customize the project by adding your own background images. Place your background images in the `backgrounds` directory.
+You can switch between different virtual backgrounds by pressing the 'n' key during execution. Press 'q' to quit the application.
 
 ## License
 
-This project is licensed under the Apache License 2.0.
+This project is licensed under the Apache License 2.0. See the LICENSE file for more details.
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit pull requests, report bugs, or suggest features.
