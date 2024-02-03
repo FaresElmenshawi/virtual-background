@@ -43,10 +43,10 @@ Before running this application, ensure you have the following installed:
 To run the application, use the following command:
 
 ```bash
-python <script-name>.py --source <source>
+python main.py --source <source>
 ```
 
-`<script-name>.py`: Name of the main Python script.
+`main.py`: Name of the main Python script.
 
 `<source>`: (Optional) Index of the video capture device (e.g., `0` for the default webcam) or the path to a video file. Defaults to `0` if not specified.
 
