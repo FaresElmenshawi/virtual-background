@@ -23,7 +23,7 @@ Before running this application, ensure you have the following installed:
 1. Clone this repository to your local machine.
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/FaresElmenshawi/virtual-background.git
     ```
 
 2. Navigate into the cloned directory.
